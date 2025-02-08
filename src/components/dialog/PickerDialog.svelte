@@ -11,8 +11,7 @@
     import PickerItem from "$components/dialog/PickerItem.svelte";
     import DialogButtons from "$components/dialog/DialogButtons.svelte";
 
-    import Icon from '@iconify/svelte';
-    import boxMultipleIcon from '@iconify/icons-tabler/box-multiple';
+    import IconBoxMultiple from "@tabler/icons-svelte/IconBoxMultiple.svelte";
 
     export let id: string;
     export let items: Optional<DialogPickerItem[]> = undefined;
@@ -39,7 +38,7 @@
     >
         <div class="popup-header">
             <div class="popup-title-container">
-                <Icon icon={boxMultipleIcon} />
+                <IconBoxMultiple />
                 <h2 class="popup-title" tabindex="-1">
                     {$t("dialog.picker.title")}
                 </h2>

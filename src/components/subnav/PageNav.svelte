@@ -6,8 +6,7 @@
 
     import { t } from "$lib/i18n/translations";
 
-    import Icon from '@iconify/svelte';
-    import arrowLeftIcon from '@iconify/icons-tabler/arrow-left';
+    import IconArrowLeft from "@tabler/icons-svelte/IconArrowLeft.svelte";
 
     export let pageName: "settings" | "about";
     export let homeNavPath: string;
@@ -50,13 +49,14 @@
         <div class="subnav-header">
             {#if isMobile}
                 {#if !isHome}
-                    <button
-                        class="button back-button"
-                        on:click={() => goto(homeNavPath)}
+                    <a
+                        class="back-button"
+                        href={homeNavPath}
+                        role="button"
+                        aria-label={$t("a11y.general.back")}
                     >
-                        <Icon icon={arrowLeftIcon} />
-                        {homeTitle}
-                    </button>
+                        <IconArrowLeft />
+                    </a>
                 {/if}
                 <h3
                     class="subnav-page-title"

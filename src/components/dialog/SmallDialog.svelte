@@ -8,8 +8,7 @@
     import Meowbalt from "$components/misc/Meowbalt.svelte";
     import DialogButtons from "$components/dialog/DialogButtons.svelte";
 
-    import Icon from '@iconify/svelte';
-    import alertTriangleIcon from '@iconify/icons-tabler/alert-triangle';
+    import IconAlertTriangle from "@tabler/icons-svelte/IconAlertTriangle.svelte";
 
     export let id: string;
     export let meowbalt: Optional<MeowbaltEmotions> = undefined;
@@ -40,7 +39,7 @@
                 <div class="popup-header">
                     {#if icon === "warn-red"}
                         <div class="popup-icon {icon}">
-                            <Icon icon={alertTriangleIcon} />
+                            <IconAlertTriangle />
                         </div>
                     {/if}
                     {#if title}

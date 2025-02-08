@@ -1,13 +1,13 @@
 <script lang="ts">
     import { t } from "$lib/i18n/translations";
-    import Icon from '@iconify/svelte';
-    import cometIcon from '@iconify/icons-tabler/comet';
+
+    import IconComet from "@tabler/icons-svelte/IconComet.svelte";
 </script>
 
 <div id="update-notification" role="alert" aria-atomic="true">
     <button class="update-button" on:click={() => window.location.reload()}>
         <div class="update-icon">
-            <Icon icon={cometIcon} />
+            <IconComet />
         </div>
         <div class="update-text">
             <div>{$t("notification.update.title")}</div>

@@ -1,13 +1,11 @@
 <script lang="ts">
     import { page } from "$app/stores";
 
-    import Icon from '@iconify/svelte';
-    import chevronRightIcon from '@iconify/icons-tabler/chevron-right';
+    import IconChevronRight from "@tabler/icons-svelte/IconChevronRight.svelte";
 
     export let path: string;
     export let title: string;
-    export let icon: any;
-    export let iconProps: any = {};
+    export let icon: ConstructorOfATypedSvelteComponent;
     export let iconColor: "gray" | "blue" | "green" = "gray";
 
     $: isActive = $page.url.pathname === path;
@@ -21,14 +19,14 @@
 >
     <div class="subnav-tab-left">
         <div class="tab-icon" style="background: var(--{iconColor})">
-            <svelte:component this={icon} {...iconProps} />
+            <svelte:component this={icon} />
         </div>
         <div class="subnav-tab-text">
             {title}
         </div>
     </div>
     <div class="subnav-tab-chevron">
-        <Icon icon={chevronRightIcon} />
+        <IconChevronRight />
     </div>
 </a>
 

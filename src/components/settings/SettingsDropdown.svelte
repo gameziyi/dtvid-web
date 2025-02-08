@@ -8,8 +8,7 @@
     import { updateSetting } from "$lib/state/settings";
     import type { CobaltSettings } from "$lib/types/settings";
 
-    import Icon from '@iconify/svelte';
-    import selectorIcon from '@iconify/icons-tabler/selector';
+    import IconSelector from "@tabler/icons-svelte/IconSelector.svelte";
 
     export let title: string;
     export let description: string = "";
@@ -43,7 +42,7 @@
                 <span class="selector-current" aria-hidden="true">
                     {selectedTitle.split("(", 2)[0]}
                 </span>
-                <Icon icon={selectorIcon} />
+                <IconSelector />
             </div>
         </div>
 

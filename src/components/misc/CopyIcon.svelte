@@ -1,8 +1,7 @@
 <script lang="ts">
-    import Icon from '@iconify/svelte';
-    import linkIcon from '@iconify/icons-tabler/link';
-    import copyIcon from '@iconify/icons-tabler/copy';
-    import checkIcon from '@iconify/icons-tabler/check';
+    import IconLink from "@tabler/icons-svelte/IconLink.svelte";
+    import IconCopy from "@tabler/icons-svelte/IconCopy.svelte";
+    import IconCheck from "@tabler/icons-svelte/IconCheck.svelte";
 
     export let check = false;
     export let regularIcon = false;
@@ -11,13 +10,13 @@
 <div class="copy-animation" class:check>
     <div class="icon-copy">
         {#if regularIcon}
-            <Icon icon={copyIcon} />
+            <IconCopy />
         {:else}
-            <Icon icon={linkIcon} />
+            <IconLink />
         {/if}
     </div>
     <div class="icon-check">
-        <Icon icon={checkIcon} />
+        <IconCheck />
     </div>
 </div>
 

@@ -6,10 +6,9 @@
 
     import Skeleton from "$components/misc/Skeleton.svelte";
 
-    import Icon from '@iconify/svelte';
-    import movieIcon from '@iconify/icons-tabler/movie';
-    import photoIcon from '@iconify/icons-tabler/photo';
-    import gifIcon from '@iconify/icons-tabler/gif';
+    import IconMovie from "@tabler/icons-svelte/IconMovie.svelte";
+    import IconPhoto from "@tabler/icons-svelte/IconPhoto.svelte";
+    import IconGif from "@tabler/icons-svelte/IconGif.svelte";
 
     export let item: DialogPickerItem;
     export let number: number;
@@ -30,11 +29,11 @@
 >
     <div class="picker-type">
         {#if itemType === "video"}
-            <Icon icon={movieIcon} />
+            <IconMovie />
         {:else if itemType === "gif"}
-            <Icon icon={gifIcon} />
+            <IconGif />
         {:else}
-            <Icon icon={photoIcon} />
+            <IconPhoto />
         {/if}
     </div>
 
