@@ -18,52 +18,35 @@
 
         <link rel="icon" href="%sveltekit.assets%/favicon.png">
         <link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/icons/apple-touch-icon.png">
-        <link type="application/activity+json" href="" />
-
         <link crossorigin="use-credentials" rel="manifest" href="%sveltekit.assets%/manifest.json">
 
         <noscript>
             <style>
-                #cobalt { opacity: 1 !important }
+                #app { opacity: 1 !important }
             </style>
         </noscript>
 
         <style>
-            body, #body-dark {
-                background-color: black;
+            :root {
+                color-scheme: only light;
             }
 
-            #body-light {
-                background-color: white;
+            html {
+                background: #fff;
+                overflow-y: scroll;
             }
 
-            @media (prefers-color-scheme: light) {
-                body {
-                    background-color: white;
-                }
-            }
-
-            #cobalt {
+            #app {
                 opacity: 0;
+                transition: opacity 100ms ease;
             }
 
-            #cobalt.loaded {
+            .js #app {
                 opacity: 1;
-                transition: opacity .2s ease-out;
             }
         </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                let settings = localStorage.getItem('settings'), appearance;
-                if (settings && ({ appearance } = JSON.parse(settings)) && appearance?.theme) {
-                    document.body.id = `body-${appearance.theme}`;
-                }
-            });
-        </script>
     </head>
-    <body data-sveltekit-preload-data="hover" data-sveltekit-preload-code="eager">
-        <div style="display: contents">
-            %sveltekit.body%
-        </div>
+    <body>
+        <div id="app">%sveltekit.body%</div>
     </body>
 </html>

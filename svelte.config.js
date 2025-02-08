@@ -1,53 +1,24 @@
 import "dotenv/config";
-import adapter from "@sveltejs/adapter-static";
-
+import adapter from "@sveltejs/adapter-vercel";
 import { mdsvex } from "mdsvex";
-import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
 import preprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    // Consult https://kit.svelte.dev/docs/integrations#preprocessors
-    // for more information about preprocessors
     extensions: [".svelte", ".md"],
     preprocess: [
-        {
-            name: "strip-announcer",
-            markup: ({ content: code }) => {
-                code = code.replace(
-                    /<div id="svelte-announcer" [\s\S]*?<\/div>/,
-                    '<svelte:component this={null} />'
-                );
-
-                return { code }
+        preprocess({
+            typescript: {
+                tsconfigFile: "./tsconfig.json"
             }
-        },
-        preprocess(),
+        }),
         mdsvex({
-            extensions: ['.md'],
-            layout: {
-                about: join(
-                    dirname(fileURLToPath(import.meta.url)),
-                    '/src/components/misc/AboutPageWrapper.svelte'
-                ),
-                changelogs: join(
-                    dirname(fileURLToPath(import.meta.url)),
-                    '/src/components/changelog/ChangelogEntryWrapper.svelte'
-                )
-            }
+            extensions: ['.md']
         })
     ],
+
     kit: {
-        adapter: adapter({
-            // default options are shown. On some platforms
-            // these options are set automatically — see below
-            pages: 'build',
-            assets: 'build',
-            fallback: '404.html',
-            precompress: false,
-            strict: true
-        }),
+        adapter: adapter(),
         csp: {
             mode: "hash",
             directives: {
