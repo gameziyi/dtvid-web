@@ -7,12 +7,13 @@
     import PageNavTab from "$components/subnav/PageNavTab.svelte";
     import PageNavSection from "$components/subnav/PageNavSection.svelte";
 
+    import SectionHeading from "$components/misc/SectionHeading.svelte";
     import Icon from '@iconify/svelte';
-    import cometIcon from '@iconify/icons-tabler/comet';
-    import usersGroupIcon from '@iconify/icons-tabler/users-group';
-    import checklistIcon from '@iconify/icons-tabler/checklist';
-    import lockIcon from '@iconify/icons-tabler/lock';
-    import licenseIcon from '@iconify/icons-tabler/license';
+    import lockIcon from '@iconify-icons/tabler/lock';
+    import cometIcon from '@iconify-icons/tabler/comet';
+    import usersGroupIcon from '@iconify-icons/tabler/users-group';
+    import checklistIcon from '@iconify-icons/tabler/checklist';
+    import licenseIcon from '@iconify-icons/tabler/license';
 
     const links = [
         {

@@ -9,15 +9,15 @@
     import PageNavSection from "$components/subnav/PageNavSection.svelte";
 
     import Icon from '@iconify/svelte';
-    import brushIcon from '@iconify/icons-tabler/brush';
-    import lockIcon from '@iconify/icons-tabler/lock';
-    import settingsIcon from '@iconify/icons-tabler/settings';
-    import movieIcon from '@iconify/icons-tabler/movie';
-    import musicIcon from '@iconify/icons-tabler/music';
-    import fileDownloadIcon from '@iconify/icons-tabler/file-download';
-    import worldIcon from '@iconify/icons-tabler/world';
-    import adjustmentsStarIcon from '@iconify/icons-tabler/adjustments-star';
-    import bugIcon from '@iconify/icons-tabler/bug';
+    import brushIcon from '@iconify-icons/tabler/brush';
+    import lockIcon from '@iconify-icons/tabler/lock';
+    import settingsIcon from '@iconify-icons/tabler/settings';
+    import movieIcon from '@iconify-icons/tabler/movie';
+    import musicIcon from '@iconify-icons/tabler/music';
+    import fileDownloadIcon from '@iconify-icons/tabler/file-download';
+    import worldIcon from '@iconify-icons/tabler/world';
+    import adjustmentsStarIcon from '@iconify-icons/tabler/adjustments-star';
+    import bugIcon from '@iconify-icons/tabler/bug';
 
     const links = [
         {
