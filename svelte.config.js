@@ -4,7 +4,7 @@ import adapter from "@sveltejs/adapter-static";
 import { mdsvex } from "mdsvex";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { sveltePreprocess } from "svelte-preprocess";
+import preprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -23,7 +23,7 @@ const config = {
                 return { code }
             }
         },
-        sveltePreprocess(),
+        preprocess(),
         mdsvex({
             extensions: ['.md'],
             layout: {
