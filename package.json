@@ -13,7 +13,7 @@
     },
     "license": "CC-BY-NC-SA-4.0",
     "engines": {
-        "node": "18.x",
+        "node": ">=18.x",
         "npm": ">=8"
     },
     "repository": {
@@ -57,7 +57,9 @@
         "vite": "^5.0.10"
     },
     "dependencies": {
+        "@iconify/svelte": "^3.1.6",
         "@sveltejs/adapter-vercel": "^4.0.0",
+        "@tabler/icons-svelte": "^2.47.0",
         "svelte-i18n": "^4.0.0"
     }
 }

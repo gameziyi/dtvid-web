@@ -1,34 +1,35 @@
 <script lang="ts">
     import { t } from "$lib/i18n/translations";
     import { openURL } from "$lib/download";
+    import { version } from "$lib/version";
 
-    import IconExternalLink from "@tabler/icons-svelte/IconExternalLink.svelte";
-
-    import IconBrandGithub from "@tabler/icons-svelte/IconBrandGithub.svelte";
-    import IconBrandTwitter from "@tabler/icons-svelte/IconBrandTwitter.svelte";
-    import IconBrandDiscord from "@tabler/icons-svelte/IconBrandDiscord.svelte";
-    import IconBrandTelegram from "@tabler/icons-svelte/IconBrandTelegram.svelte";
-    import IconBrandBluesky from "@tabler/icons-svelte/IconBrandBluesky.svelte";
+    import Icon from '@iconify/svelte';
+    import externalLinkIcon from '@iconify-icons/tabler/external-link';
+    import githubIcon from '@iconify-icons/tabler/brand-github';
+    import twitterIcon from '@iconify-icons/tabler/brand-twitter';
+    import discordIcon from '@iconify-icons/tabler/brand-discord';
+    import telegramIcon from '@iconify-icons/tabler/brand-telegram';
+    import blueskyIcon from '@iconify-icons/tabler/brand-bluesky';
 
     const platformIcons = {
         github: {
-            icon: IconBrandGithub,
+            icon: githubIcon,
             color: "#8842cd",
         },
         discord: {
-            icon: IconBrandDiscord,
+            icon: discordIcon,
             color: "#5865f2",
         },
         twitter: {
-            icon: IconBrandTwitter,
+            icon: twitterIcon,
             color: "#1da1f2",
         },
         telegram: {
-            icon: IconBrandTelegram,
+            icon: telegramIcon,
             color: "#1c9efb",
         },
         bluesky: {
-            icon: IconBrandBluesky,
+            icon: blueskyIcon,
             color: "#0a78ff",
         },
     };
@@ -52,11 +53,15 @@
                 box-shadow: 0 0 90px 10px {platformIcons[platform].color};
             "
         >
-            <svelte:component this={platformIcons[platform].icon} />
+            <div class="icon-wrapper">
+                <Icon icon={platformIcons[platform].icon} width="20" class="icon" />
+            </div>
         </div>
         <div class="support-card-title">
             {platform}
-            <IconExternalLink />
+            <div class="icon-wrapper">
+                <Icon icon={externalLinkIcon} width="14" class="icon" />
+            </div>
         </div>
     </div>
     <div class="subtext support-card-description">
@@ -94,11 +99,15 @@
         border-radius: 5px;
     }
 
-    .icon-holder :global(svg) {
-        width: 20px;
-        height: 20px;
-        stroke-width: 1.5px;
-        stroke: var(--white);
+    .icon-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4px;
+    }
+
+    .icon {
+        stroke-width: 1.6px;
     }
 
     .support-card-title {
@@ -106,13 +115,6 @@
         flex-direction: row;
         align-items: center;
         gap: 6px;
-    }
-
-    .support-card-title :global(svg) {
-        stroke: var(--secondary);
-        opacity: 0.5;
-        width: 14px;
-        height: 14px;
     }
 
     .support-card-description {

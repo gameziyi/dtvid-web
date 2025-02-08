@@ -3,14 +3,17 @@
     import { browser } from "$app/environment";
 
     import { t } from "$lib/i18n/translations";
+    import Icon from '@iconify/svelte';
+    import arrowLeftIcon from '@iconify-icons/tabler/arrow-left';
+    import arrowRightIcon from '@iconify-icons/tabler/arrow-right';
+
     import { getAllChangelogs } from "$lib/changelogs";
     import type { Optional } from "$lib/types/generic";
     import type { ChangelogImport } from "$lib/types/changelogs";
 
     import ChangelogEntry from "$components/changelog/ChangelogEntry.svelte";
 
-    import IconArrowLeft from "@tabler/icons-svelte/IconArrowLeft.svelte";
-    import IconArrowRight from "@tabler/icons-svelte/IconArrowRight.svelte";
+    let showQRCode = false;
 
     const changelogs = getAllChangelogs();
     const versions = Object.keys(changelogs);
@@ -98,7 +101,9 @@
                     on:click={loadPrev}
                     aria-label={$t("updates.button.previous", { value: prev })}
                 >
-                    <IconArrowLeft />
+                    <div class="icon-wrapper">
+                        <Icon icon={arrowLeftIcon} width="32" class="icon" />
+                    </div>
                     {prev || ""}
                 </button>
             {/if}
@@ -125,7 +130,9 @@
                         on:click={loadPrev}
                         aria-label={$t("updates.button.previous", { value: prev })}
                     >
-                        <IconArrowLeft />
+                        <div class="icon-wrapper">
+                            <Icon icon={arrowLeftIcon} width="32" class="icon" />
+                        </div>
                         {prev || ""}
                     </button>
                 {/if}
@@ -137,7 +144,9 @@
                         aria-label={$t("updates.button.next", { value: next })}
                     >
                         {next || ""}
-                        <IconArrowRight />
+                        <div class="icon-wrapper">
+                            <Icon icon={arrowRightIcon} width="32" class="icon" />
+                        </div>
                     </button>
                 {/if}
             </div>
@@ -151,7 +160,9 @@
                     aria-label={$t("updates.button.next", { value: next })}
                 >
                     {next || ""}
-                    <IconArrowRight />
+                    <div class="icon-wrapper">
+                        <Icon icon={arrowRightIcon} width="32" class="icon" />
+                    </div>
                 </button>
             {/if}
         </div>
@@ -180,7 +191,13 @@
         border: none;
     }
 
-    button :global(svg) {
+    .icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon {
         stroke-width: 1.6px;
     }
 

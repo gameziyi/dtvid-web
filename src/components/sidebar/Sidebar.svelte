@@ -1,26 +1,31 @@
 <script lang="ts">
     import { t } from "$lib/i18n/translations";
-    import { defaultNavPage } from "$lib/subnav";
+    import { page } from "$app/stores";
+    import { base } from "$app/paths";
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
+
+    import Icon from '@iconify/svelte';
+    import downloadIcon from '@iconify-icons/tabler/download';
+    import settingsIcon from '@iconify-icons/tabler/settings';
+    import repeatIcon from '@iconify-icons/tabler/repeat';
+    import cometIcon from '@iconify-icons/tabler/comet';
+    import heartIcon from '@iconify-icons/tabler/heart';
+    import infoCircleIcon from '@iconify-icons/tabler/info-circle';
+
+    import { version } from "$lib/version";
+    import { getUpdateNotification } from "$lib/changelogs";
 
     import CobaltLogo from "$components/sidebar/CobaltLogo.svelte";
     import SidebarTab from "$components/sidebar/SidebarTab.svelte";
 
-    import IconDownload from "@tabler/icons-svelte/IconDownload.svelte";
-    import IconSettings from "@tabler/icons-svelte/IconSettings.svelte";
-
-    import IconRepeat from "@tabler/icons-svelte/IconRepeat.svelte";
-
-    import IconComet from "@tabler/icons-svelte/IconComet.svelte";
-    import IconHeart from "@tabler/icons-svelte/IconHeart.svelte";
-    import IconInfoCircle from "@tabler/icons-svelte/IconInfoCircle.svelte";
-
     let screenWidth: number;
-    let settingsLink = defaultNavPage("settings");
-    let aboutLink = defaultNavPage("about");
+    let settingsLink = `${base}/settings`;
+    let aboutLink = `${base}/about`;
 
     $: screenWidth,
-        (settingsLink = defaultNavPage("settings")),
-        (aboutLink = defaultNavPage("about"));
+        (settingsLink = `${base}/settings`),
+        (aboutLink = `${base}/about`);
 </script>
 
 <svelte:window bind:innerWidth={screenWidth} />
@@ -29,14 +34,14 @@
     <CobaltLogo />
     <div id="sidebar-tabs" role="tablist">
         <div id="sidebar-actions" class="sidebar-inner-container">
-            <SidebarTab name="save" path="/" icon={IconDownload} />
-            <SidebarTab name="remux" path="/remux" icon={IconRepeat} beta />
+            <SidebarTab name="save" path="/" icon={downloadIcon} />
+            <SidebarTab name="remux" path="/remux" icon={repeatIcon} beta />
         </div>
         <div id="sidebar-info" class="sidebar-inner-container">
-            <SidebarTab name="settings" path={settingsLink} icon={IconSettings} />
-            <SidebarTab name="donate" path="/donate" icon={IconHeart} />
-            <SidebarTab name="updates" path="/updates" icon={IconComet} />
-            <SidebarTab name="about" path={aboutLink} icon={IconInfoCircle} />
+            <SidebarTab name="settings" path={settingsLink} icon={settingsIcon} />
+            <SidebarTab name="donate" path="/donate" icon={heartIcon} />
+            <SidebarTab name="updates" path="/updates" icon={cometIcon} />
+            <SidebarTab name="about" path={aboutLink} icon={infoCircleIcon} />
         </div>
     </div>
 </nav>

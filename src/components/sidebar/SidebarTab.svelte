@@ -1,12 +1,12 @@
 <script lang="ts">
     import { page } from "$app/stores";
-
     import { t } from "$lib/i18n/translations";
+    import { base } from "$app/paths";
+    import Icon from '@iconify/svelte';
 
     export let name: string;
     export let path: string;
-    export let icon: ConstructorOfATypedSvelteComponent;
-
+    export let icon: string;
     export let beta = false;
 
     const firstTabPage = ["save", "remux", "settings"];
@@ -47,7 +47,9 @@
         <div class="beta-sign" aria-label={$t("general.beta")}>β</div>
     {/if}
 
-    <svelte:component this={icon} />
+    <div class="icon-wrapper">
+        <Icon {icon} width="24" class="icon" />
+    </div>
     {$t(`tabs.${name}`)}
 </a>
 
