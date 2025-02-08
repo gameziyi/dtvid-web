@@ -1,6 +1,21 @@
 <script>
     import { t } from "$lib/i18n/translations";
     import Icon from '@iconify/svelte';
+    import linkIcon from '@iconify/icons-tabler/link';
+    import clipboardTextIcon from '@iconify/icons-tabler/clipboard-text';
+    import playCircleIcon from '@iconify/icons-tabler/player-play';
+    
+    // Platform icons
+    import youtubeIcon from '@iconify/icons-logos/youtube-icon';
+    import tiktokIcon from '@iconify/icons-logos/tiktok-icon';
+    import instagramIcon from '@iconify/icons-skill-icons/instagram';
+    import twitterIcon from '@iconify/icons-logos/twitter';
+    import facebookIcon from '@iconify/icons-logos/facebook';
+    import vimeoIcon from '@iconify/icons-simple-icons/vimeo';
+    import bilibiliIcon from '@iconify/icons-ri/bilibili-fill';
+    import xiaohongshuIcon from '@iconify/icons-simple-icons/xiaohongshu';
+    import tiktokCnIcon from '@iconify/icons-tabler/brand-tiktok';
+    import weiboIcon from '@iconify/icons-ri/weibo-fill';
     
     let url = "";
     let isProcessing = false;
@@ -34,19 +49,19 @@
             <div class="steps-container">
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:link-bold" width="32" class="step-icon" />
+                        <Icon icon={linkIcon} width="32" class="step-icon" />
                     </div>
                     <p>Copy the webpage link with the video</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:clipboard-text-bold" width="32" class="step-icon" />
+                        <Icon icon={clipboardTextIcon} width="32" class="step-icon" />
                     </div>
                     <p>Paste the link in the input field</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:play-circle-bold" width="32" class="step-icon" />
+                        <Icon icon={playCircleIcon} width="32" class="step-icon" />
                     </div>
                     <p>Click on the <span class="highlight-text">Download</span> button</p>
                 </div>
@@ -87,61 +102,61 @@
             <div class="platform-grid">
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="logos:youtube-icon" width="24" />
+                        <Icon icon={youtubeIcon} width="24" />
                     </div>
                     <span>YouTube</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="logos:tiktok-icon" width="24" />
+                        <Icon icon={tiktokIcon} width="24" />
                     </div>
                     <span>TikTok</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="skill-icons:instagram" width="24" />
+                        <Icon icon={instagramIcon} width="24" />
                     </div>
                     <span>Instagram</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="logos:twitter" width="24" />
+                        <Icon icon={twitterIcon} width="24" />
                     </div>
                     <span>Twitter</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="logos:facebook" width="24" />
+                        <Icon icon={facebookIcon} width="24" />
                     </div>
                     <span>Facebook</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="simple-icons:vimeo" color="#1ab7ea" width="24" />
+                        <Icon icon={vimeoIcon} color="#1ab7ea" width="24" />
                     </div>
                     <span>Vimeo</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="ri:bilibili-fill" color="#00a1d6" width="24" />
+                        <Icon icon={bilibiliIcon} color="#00a1d6" width="24" />
                     </div>
                     <span>Bilibili</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="simple-icons:xiaohongshu" color="#ff2442" width="24" />
+                        <Icon icon={xiaohongshuIcon} color="#ff2442" width="24" />
                     </div>
                     <span>小红书</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="tabler:brand-tiktok" width="24" />
+                        <Icon icon={tiktokCnIcon} width="24" />
                     </div>
                     <span>抖音</span>
                 </div>
                 <div class="platform-item">
                     <div class="platform-icon">
-                        <Icon icon="ri:weibo-fill" color="#e6162d" width="24" />
+                        <Icon icon={weiboIcon} color="#e6162d" width="24" />
                     </div>
                     <span>微博</span>
                 </div>

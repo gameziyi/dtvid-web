@@ -19,9 +19,10 @@
     import SavingTutorial from "$components/dialog/SavingTutorial.svelte";
     import VerticalActionButton from "$components/buttons/VerticalActionButton.svelte";
 
-    import IconShare2 from "@tabler/icons-svelte/IconShare2.svelte";
-    import IconDownload from "@tabler/icons-svelte/IconDownload.svelte";
-    import IconFileDownload from "@tabler/icons-svelte/IconFileDownload.svelte";
+    import Icon from '@iconify/svelte';
+    import share2Icon from '@iconify/icons-tabler/share-2';
+    import downloadIcon from '@iconify/icons-tabler/download';
+    import fileDownloadIcon from '@iconify/icons-tabler/file-download';
 
     import CopyIcon from "$components/misc/CopyIcon.svelte";
 
@@ -52,7 +53,7 @@
 
         <div class="dialog-inner-container">
             <div class="popup-header">
-                <IconFileDownload />
+                <Icon icon={fileDownloadIcon} />
                 <h2 class="popup-title" tabindex="-1">
                     {$t("dialog.saving.title")}
                 </h2>
@@ -72,7 +73,7 @@
                             }
                         }}
                     >
-                        <IconDownload />
+                        <Icon icon={fileDownloadIcon} />
                         {$t("button.download")}
                     </VerticalActionButton>
                 {/if}
@@ -90,7 +91,7 @@
                             }
                         }}
                     >
-                        <IconShare2 />
+                        <Icon icon={share2Icon} />
                         {$t("button.share")}
                     </VerticalActionButton>
                 {/if}

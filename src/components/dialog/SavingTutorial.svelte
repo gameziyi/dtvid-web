@@ -2,9 +2,10 @@
     import { siriShortcuts } from "$lib/env";
     import { t } from "$lib/i18n/translations";
 
-    import IconPlus from "@tabler/icons-svelte/IconPlus.svelte";
-    import IconFlower from "@tabler/icons-svelte/IconFlower.svelte";
-    import IconFolder from "@tabler/icons-svelte/IconFolder.svelte";
+    import Icon from '@iconify/svelte';
+    import plusIcon from '@iconify/icons-tabler/plus';
+    import flowerIcon from '@iconify/icons-tabler/flower';
+    import folderIcon from '@iconify/icons-tabler/folder';
 
     let tutorialExpanded = false;
 </script>
@@ -18,7 +19,7 @@
         }}
     >
         <div class="expand-icon">
-            <IconPlus />
+            <Icon icon={plusIcon} />
         </div>
         {$t("save.tutorial.title")}
     </button>
@@ -40,7 +41,7 @@
                                 "a11y.save.tutorial.shortcut.photos"
                             )}
                         >
-                            <IconFlower />
+                            <Icon icon={flowerIcon} />
                             {$t("save.tutorial.shortcut.photos")}
                         </a>
                         <a
@@ -50,7 +51,7 @@
                                 "a11y.save.tutorial.shortcut.files"
                             )}
                         >
-                            <IconFolder />
+                            <Icon icon={folderIcon} />
                             {$t("save.tutorial.shortcut.files")}
                         </a>
                     </div>

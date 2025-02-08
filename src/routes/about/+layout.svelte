@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { page } from "$app/stores";
     import { t } from "$lib/i18n/translations";
 
     import PageNav from "$components/subnav/PageNav.svelte";
@@ -6,11 +7,45 @@
     import PageNavTab from "$components/subnav/PageNavTab.svelte";
     import PageNavSection from "$components/subnav/PageNavSection.svelte";
 
-    import IconLock from "@tabler/icons-svelte/IconLock.svelte";
-    import IconComet from "@tabler/icons-svelte/IconComet.svelte";
-    import IconLicense from "@tabler/icons-svelte/IconLicense.svelte";
-    import IconChecklist from "@tabler/icons-svelte/IconChecklist.svelte";
-    import IconUsersGroup from "@tabler/icons-svelte/IconUsersGroup.svelte";
+    import Icon from '@iconify/svelte';
+    import cometIcon from '@iconify/icons-tabler/comet';
+    import usersGroupIcon from '@iconify/icons-tabler/users-group';
+    import checklistIcon from '@iconify/icons-tabler/checklist';
+    import lockIcon from '@iconify/icons-tabler/lock';
+    import licenseIcon from '@iconify/icons-tabler/license';
+
+    const links = [
+        {
+            href: "/about/general",
+            text: {$t("about.page.general")},
+            icon: cometIcon,
+            external: false
+        },
+        {
+            href: "/about/community",
+            text: {$t("about.page.community")},
+            icon: usersGroupIcon,
+            external: false
+        },
+        {
+            href: "/about/terms",
+            text: {$t("about.page.terms")},
+            icon: checklistIcon,
+            external: false
+        },
+        {
+            href: "/about/privacy",
+            text: {$t("about.page.privacy")},
+            icon: lockIcon,
+            external: false
+        },
+        {
+            href: "/about/credits",
+            text: {$t("about.page.credits")},
+            icon: licenseIcon,
+            external: false
+        }
+    ];
 </script>
 
 <PageNav
@@ -22,39 +57,15 @@
 >
     <svelte:fragment slot="navigation">
         <PageNavSection>
-            <PageNavTab
-                path="/about/general"
-                title={$t("about.page.general")}
-                icon={IconComet}
-                iconColor="blue"
-            />
-            <PageNavTab
-                path="/about/community"
-                title={$t("about.page.community")}
-                icon={IconUsersGroup}
-                iconColor="green"
-            />
-        </PageNavSection>
-
-        <PageNavSection>
-            <PageNavTab
-                path="/about/terms"
-                title={$t("about.page.terms")}
-                icon={IconChecklist}
-                iconColor="gray"
-            />
-            <PageNavTab
-                path="/about/privacy"
-                title={$t("about.page.privacy")}
-                icon={IconLock}
-                iconColor="gray"
-            />
-            <PageNavTab
-                path="/about/credits"
-                title={$t("about.page.credits")}
-                icon={IconLicense}
-                iconColor="gray"
-            />
+            {#each links as link}
+                <PageNavTab
+                    path={link.href}
+                    title={link.text}
+                    icon={Icon}
+                    iconProps={{icon: link.icon}}
+                    iconColor="blue"
+                />
+            {/each}
         </PageNavSection>
     </svelte:fragment>
 
