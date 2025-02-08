@@ -1,20 +1,12 @@
 import "dotenv/config";
 import adapter from "@sveltejs/adapter-vercel";
-import { mdsvex } from "mdsvex";
-import preprocess from "svelte-preprocess";
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     extensions: [".svelte", ".md"],
     preprocess: [
-        preprocess({
-            typescript: {
-                tsconfigFile: "./tsconfig.json"
-            }
-        }),
-        mdsvex({
-            extensions: ['.md']
-        })
+        vitePreprocess()
     ],
 
     kit: {

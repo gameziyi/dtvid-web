@@ -7,11 +7,7 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-        "lint": "prettier --check . && eslint .",
-        "format": "prettier --write .",
-        "prepare": "npm install --include=dev && svelte-kit sync"
+        "prepare": "svelte-kit sync"
     },
     "license": "CC-BY-NC-SA-4.0",
     "engines": {
