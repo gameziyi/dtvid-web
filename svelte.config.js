@@ -22,7 +22,8 @@ const config = {
             runtime: 'edge'
         }),
         alias: {
-            $lib: './src/lib'
+            $lib: './src/lib',
+            $components: './src/components'
         }
     }
 };

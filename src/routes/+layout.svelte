@@ -14,9 +14,7 @@
 
     import { device, app } from "$lib/device";
     import currentTheme, { statusBarColors } from "$lib/state/theme";
-    import { turnstileCreated, turnstileEnabled } from "$lib/state/turnstile";
 
-    import Turnstile from "$components/misc/Turnstile.svelte";
     import DialogHolder from "$components/dialog/DialogHolder.svelte";
     import UpdateNotification from "$components/misc/UpdateNotification.svelte";
     import Icon from '@iconify/svelte';
@@ -97,9 +95,6 @@
         <UpdateNotification />
     {/if}
     <DialogHolder />
-    {#if ($turnstileEnabled && $page.url.pathname === "/") || $turnstileCreated}
-        <Turnstile />
-    {/if}
     <slot></slot>
 </main>
 
