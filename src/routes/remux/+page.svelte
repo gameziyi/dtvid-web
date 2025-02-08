@@ -242,19 +242,19 @@
             <BulletExplain
                 title={$t("remux.bullet.purpose.title")}
                 description={$t("remux.bullet.purpose.description")}
-                icon={<Icon icon={repeatIcon} width="32" class="icon" />}
+                iconData={{ icon: repeatIcon }}
             />
 
             <BulletExplain
                 title={$t("remux.bullet.explainer.title")}
                 description={$t("remux.bullet.explainer.description")}
-                icon={<Icon icon={infoCircleIcon} width="32" class="icon" />}
+                iconData={{ icon: infoCircleIcon }}
             />
 
             <BulletExplain
                 title={$t("remux.bullet.privacy.title")}
                 description={$t("remux.bullet.privacy.description")}
-                icon={<Icon icon={devicesIcon} width="32" class="icon" />}
+                iconData={{ icon: devicesIcon }}
             />
         </div>
     </div>

@@ -1,19 +1,19 @@
 <script lang="ts">
     export let title: string;
     export let description: string;
-    export let icon: ConstructorOfATypedSvelteComponent;
+    export let iconData: { icon: string; };
 </script>
 
 <div class="bullet-holder">
     <div class="bullet-icon">
-        <svelte:component this={icon} />
+        <Icon icon={iconData.icon} width="32" class="icon" />
     </div>
     <div class="bullet-content">
         <div class="bullet-title">
-            {title}
+            <h3>{title}</h3>
         </div>
         <div class="subtext bullet-description">
-            {description}
+            <p>{description}</p>
         </div>
     </div>
 </div>
@@ -54,6 +54,25 @@
     .bullet-icon :global(svg) {
         width: 21px;
         height: 21px;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    h3 {
+        margin: 0;
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0;
+        color: var(--secondary);
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     @media screen and (max-width: 535px) {
