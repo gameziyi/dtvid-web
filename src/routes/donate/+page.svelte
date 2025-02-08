@@ -3,13 +3,15 @@
 
     import { donate } from "$lib/env";
     import { t } from "$lib/i18n/translations";
+    import Icon from '@iconify/svelte';
+    import diamondIcon from '@iconify-icons/tabler/diamond';
 
     import DonateBanner from "$components/donate/DonateBanner.svelte";
     import DonateAltItem from "$components/donate/DonateAltItem.svelte";
     import DonateShareCard from "$components/donate/DonateShareCard.svelte";
     import DonateOptionsCard from "$components/donate/DonateOptionsCard.svelte";
 
-    import IconDiamond from "@tabler/icons-svelte/IconDiamond.svelte";
+    let showQRCode = false;
 </script>
 
 <svelte:head>
@@ -39,7 +41,9 @@
 
         <section id="crypto">
             <div id="crypto-section-header">
-                <IconDiamond />
+                <div class="icon-wrapper">
+                    <Icon icon={diamondIcon} width="32" class="icon" />
+                </div>
                 <h3 id="crypto-title">{$t("donate.alternative.title")}</h3>
             </div>
             <div id="wallet-grid">
@@ -108,10 +112,9 @@
         margin-bottom: 14px;
     }
 
-    #crypto-section-header :global(svg) {
+    .icon-wrapper {
         width: 22px;
         height: 22px;
-        stroke-width: 1.8px;
     }
 
     #wallet-grid {
