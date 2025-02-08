@@ -3,7 +3,8 @@
     import { createDialog } from "$lib/state/dialogs";
     import { resetSettings } from "$lib/state/settings";
 
-    import IconTrash from "@tabler/icons-svelte/IconTrash.svelte";
+    import Icon from '@iconify/svelte';
+    import trashIcon from '@iconify-icons/tabler/trash';
 
     const resetDialog = () => {
         createDialog({
@@ -31,7 +32,9 @@
 </script>
 
 <button id="setting-button-reset" class="button" on:click={resetDialog}>
-    <IconTrash />
+    <div class="icon-wrapper">
+        <Icon icon={trashIcon} width="32" class="icon" />
+    </div>
     {$t("button.reset")}
 </button>
 
@@ -47,8 +50,7 @@
         background-color: var(--dark-red);
     }
 
-    #setting-button-reset :global(svg) {
-        stroke-width: 2px;
+    #setting-button-reset :global(.icon) {
         height: 24px;
         width: 24px;
     }

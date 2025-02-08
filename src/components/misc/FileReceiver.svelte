@@ -1,9 +1,10 @@
 <script lang="ts">
     import { t } from "$lib/i18n/translations";
+    import Icon from '@iconify/svelte';
+    import fileImportIcon from '@iconify-icons/tabler/file-import';
+    import uploadIcon from '@iconify-icons/tabler/upload';
 
     import Meowbalt from "$components/misc/Meowbalt.svelte";
-    import IconFileImport from "@tabler/icons-svelte/IconFileImport.svelte";
-    import IconUpload from "@tabler/icons-svelte/IconUpload.svelte";
 
     export let file: File | undefined;
     export let draggedOver = false;
@@ -36,11 +37,11 @@
             </svg>
         </div>
 
-        <div class="open-file-icon">
+        <div class="icon-wrapper">
             {#if draggedOver}
-                <IconUpload />
+                <Icon icon={uploadIcon} width="32" class="icon" />
             {:else}
-                <IconFileImport />
+                <Icon icon={fileImportIcon} width="32" class="icon" />
             {/if}
         </div>
 
@@ -135,14 +136,13 @@
         margin-bottom: -9px;
     }
 
-    .open-file-icon {
+    .icon-wrapper {
         display: flex;
     }
 
-    .open-file-icon :global(svg) {
+    .icon-wrapper .icon {
         width: 32px;
         height: 32px;
-        stroke-width: 1.8px;
     }
 
     .open-file-text {

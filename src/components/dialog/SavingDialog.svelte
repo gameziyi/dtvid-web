@@ -1,5 +1,9 @@
 <script lang="ts">
     import { t } from "$lib/i18n/translations";
+    import Icon from '@iconify/svelte';
+    import share2Icon from '@iconify-icons/tabler/share-2';
+    import downloadIcon from '@iconify-icons/tabler/download';
+    import fileDownloadIcon from '@iconify-icons/tabler/file-download';
 
     import { device } from "$lib/device";
     import {
@@ -18,10 +22,6 @@
     import DialogButtons from "$components/dialog/DialogButtons.svelte";
     import SavingTutorial from "$components/dialog/SavingTutorial.svelte";
     import VerticalActionButton from "$components/buttons/VerticalActionButton.svelte";
-
-    import IconShare2 from "@tabler/icons-svelte/IconShare2.svelte";
-    import IconDownload from "@tabler/icons-svelte/IconDownload.svelte";
-    import IconFileDownload from "@tabler/icons-svelte/IconFileDownload.svelte";
 
     import CopyIcon from "$components/misc/CopyIcon.svelte";
 
@@ -52,7 +52,9 @@
 
         <div class="dialog-inner-container">
             <div class="popup-header">
-                <IconFileDownload />
+                <div class="icon-wrapper">
+                    <Icon icon={fileDownloadIcon} width="32" class="icon" />
+                </div>
                 <h2 class="popup-title" tabindex="-1">
                     {$t("dialog.saving.title")}
                 </h2>
@@ -72,7 +74,9 @@
                             }
                         }}
                     >
-                        <IconDownload />
+                        <div class="icon-wrapper">
+                            <Icon icon={downloadIcon} width="32" class="icon" />
+                        </div>
                         {$t("button.download")}
                     </VerticalActionButton>
                 {/if}
@@ -90,7 +94,9 @@
                             }
                         }}
                     >
-                        <IconShare2 />
+                        <div class="icon-wrapper">
+                            <Icon icon={share2Icon} width="32" class="icon" />
+                        </div>
                         {$t("button.share")}
                     </VerticalActionButton>
                 {/if}
@@ -177,7 +183,13 @@
         color: var(--secondary);
     }
 
-    .popup-header :global(svg) {
+    .icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon {
         height: 21px;
         width: 21px;
     }

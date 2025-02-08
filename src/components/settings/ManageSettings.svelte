@@ -8,8 +8,9 @@
     import ActionButton from "$components/buttons/ActionButton.svelte";
     import ResetSettingsButton from "$components/settings/ResetSettingsButton.svelte";
 
-    import IconFileExport from "@tabler/icons-svelte/IconFileExport.svelte";
-    import IconFileImport from "@tabler/icons-svelte/IconFileImport.svelte";
+    import Icon from '@iconify/svelte';
+    import fileExportIcon from '@iconify-icons/tabler/file-export';
+    import fileImportIcon from '@iconify-icons/tabler/file-import';
 
     const updateSettings = (reader: FileReader) => {
         try {
@@ -96,13 +97,17 @@
 
 <div class="button-row" id="settings-data-transfer">
     <ActionButton id="import-settings" click={importSettings}>
-        <IconFileImport />
+        <div class="icon-wrapper">
+            <Icon icon={fileImportIcon} width="32" class="icon" />
+        </div>
         {$t("button.import")}
     </ActionButton>
 
     {#if $storedSettings.schemaVersion}
         <ActionButton id="export-settings" click={exportSettings}>
-            <IconFileExport />
+            <div class="icon-wrapper">
+                <Icon icon={fileExportIcon} width="32" class="icon" />
+            </div>
             {$t("button.export")}
         </ActionButton>
     {/if}

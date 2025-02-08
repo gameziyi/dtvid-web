@@ -12,9 +12,10 @@
     import FileReceiver from "$components/misc/FileReceiver.svelte";
     import BulletExplain from "$components/misc/BulletExplain.svelte";
 
-    import IconRepeat from "@tabler/icons-svelte/IconRepeat.svelte";
-    import IconDevices from "@tabler/icons-svelte/IconDevices.svelte";
-    import IconInfoCircle from "@tabler/icons-svelte/IconInfoCircle.svelte";
+    import Icon from '@iconify/svelte';
+    import repeatIcon from '@iconify-icons/tabler/repeat';
+    import devicesIcon from '@iconify-icons/tabler/devices';
+    import infoCircleIcon from '@iconify-icons/tabler/info-circle';
 
     let draggedOver = false;
     let file: File | undefined;
@@ -241,19 +242,19 @@
             <BulletExplain
                 title={$t("remux.bullet.purpose.title")}
                 description={$t("remux.bullet.purpose.description")}
-                icon={IconRepeat}
+                icon={<Icon icon={repeatIcon} width="32" class="icon" />}
             />
 
             <BulletExplain
                 title={$t("remux.bullet.explainer.title")}
                 description={$t("remux.bullet.explainer.description")}
-                icon={IconInfoCircle}
+                icon={<Icon icon={infoCircleIcon} width="32" class="icon" />}
             />
 
             <BulletExplain
                 title={$t("remux.bullet.privacy.title")}
                 description={$t("remux.bullet.privacy.description")}
-                icon={IconDevices}
+                icon={<Icon icon={devicesIcon} width="32" class="icon" />}
             />
         </div>
     </div>
