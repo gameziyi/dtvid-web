@@ -9,17 +9,18 @@ import type {
 
 import _languages from '$i18n/languages.json';
 
-const locFiles = import.meta.glob('$i18n/*/**/*.json');
-const parsedLocfiles: StructuredLocfileInfo = {};
+import { addMessages, init, getLocaleFromNavigator } from "svelte-i18n";
 
-for (const [path, loader] of Object.entries(locFiles)) {
-    const [, , lang, ...keyComponents] = path.split('/');
-    const key = keyComponents.map(k => k.replace('.json', '')).join('.');
-    parsedLocfiles[lang] = {
-        ...parsedLocfiles[lang],
-        [key]: loader as GenericImport
-    };
-}
+import en from "./locales/en.json";
+import zhCN from "./locales/zh-CN.json";
+
+addMessages("en", en);
+addMessages("zh-CN", zhCN);
+
+init({
+    fallbackLocale: "en",
+    initialLocale: getLocaleFromNavigator(),
+});
 
 const defaultLocale = 'en';
 const languages: Record<string, string> = _languages;
@@ -55,5 +56,5 @@ const config: Config<{
 export { defaultLocale };
 export const {
     t, loading, locales, locale: INTERNAL_locale, translations,
-    loadTranslations, addTranslations, setLocale, setRoute
+    loadTranslations, addTranslations, setLocale, setLocale as setRoute
 } = new i18n(config);
