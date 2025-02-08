@@ -1,6 +1,10 @@
 <script>
     import { t } from "$lib/i18n/translations";
     import Icon from '@iconify/svelte';
+    import linkBold from '@iconify/icons-ph/link-bold';
+    import clipboardTextBold from '@iconify/icons-ph/clipboard-text-bold';
+    import playCircleBold from '@iconify/icons-ph/play-circle-bold';
+    import downloadSimpleBold from '@iconify/icons-ph/download-simple-bold';
     
     let url = "";
     let isProcessing = false;
@@ -34,25 +38,25 @@
             <div class="steps-container">
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:link-bold" width="32" class="step-icon" />
+                        <Icon icon={linkBold} width="32" class="step-icon" />
                     </div>
                     <p>Copy the webpage link with the video</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:clipboard-text-bold" width="32" class="step-icon" />
+                        <Icon icon={clipboardTextBold} width="32" class="step-icon" />
                     </div>
                     <p>Paste the link in the input field</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:play-circle-bold" width="32" class="step-icon" />
+                        <Icon icon={playCircleBold} width="32" class="step-icon" />
                     </div>
                     <p>Click on the <span class="highlight-text">Download</span> button</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon-wrapper">
-                        <Icon icon="ph:download-simple-bold" width="32" class="step-icon" />
+                        <Icon icon={downloadSimpleBold} width="32" class="step-icon" />
                     </div>
                     <p>Download videos<br>to device</p>
                 </div>
