@@ -22,43 +22,43 @@
     const links = [
         {
             href: "/settings/appearance",
-            text: {$t("settings.page.appearance")},
+            text: $t("settings.page.appearance"),
             icon: brushIcon,
             external: false
         },
         {
             href: "/settings/privacy",
-            text: {$t("settings.page.privacy")},
+            text: $t("settings.page.privacy"),
             icon: lockIcon,
             external: false
         },
         {
             href: "/settings/video",
-            text: {$t("settings.page.video")},
+            text: $t("settings.page.video"),
             icon: movieIcon,
             external: false
         },
         {
             href: "/settings/audio",
-            text: {$t("settings.page.audio")},
+            text: $t("settings.page.audio"),
             icon: musicIcon,
             external: false
         },
         {
             href: "/settings/download",
-            text: {$t("settings.page.download")},
+            text: $t("settings.page.download"),
             icon: fileDownloadIcon,
             external: false
         },
         {
             href: "/settings/instances",
-            text: {$t("settings.page.instances")},
+            text: $t("settings.page.instances"),
             icon: worldIcon,
             external: false
         },
         {
             href: "/settings/advanced",
-            text: {$t("settings.page.advanced")},
+            text: $t("settings.page.advanced"),
             icon: settingsIcon,
             external: false
         }

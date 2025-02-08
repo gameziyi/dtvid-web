@@ -18,31 +18,31 @@
     const links = [
         {
             href: "/about/general",
-            text: {$t("about.page.general")},
+            text: $t("about.page.general"),
             icon: cometIcon,
             external: false
         },
         {
             href: "/about/community",
-            text: {$t("about.page.community")},
+            text: $t("about.page.community"),
             icon: usersGroupIcon,
             external: false
         },
         {
             href: "/about/terms",
-            text: {$t("about.page.terms")},
+            text: $t("about.page.terms"),
             icon: checklistIcon,
             external: false
         },
         {
             href: "/about/privacy",
-            text: {$t("about.page.privacy")},
+            text: $t("about.page.privacy"),
             icon: lockIcon,
             external: false
         },
         {
             href: "/about/credits",
-            text: {$t("about.page.credits")},
+            text: $t("about.page.credits"),
             icon: licenseIcon,
             external: false
         }
