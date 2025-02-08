@@ -85,6 +85,9 @@ export default defineConfig({
         generateSitemap
     ],
     build: {
+        commonjsOptions: {
+            include: [/ts-deepmerge/]
+        },
         rollupOptions: {
             output: {
                 manualChunks: (id) => {
@@ -113,6 +116,7 @@ export default defineConfig({
         proxy: {}
     },
     optimizeDeps: {
+        include: ['ts-deepmerge'],
         exclude: [ "@imput/libav.js-remux-cli" ]
     },
 });
